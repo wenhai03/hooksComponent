@@ -6,8 +6,8 @@ function App() {
   return (
     <div className="app">
       <Switch
-      isOn={value}
-      handleToggle={() => setValue(!value)}
+        isOn={value}
+        handleToggle={() => setValue(!value)}
       />
     </div>
   );
