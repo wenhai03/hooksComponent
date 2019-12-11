@@ -28,7 +28,7 @@ function FormBuilder (props) {
         {element.label}
         <Tooltip title={element.tooltip}>
           {' '}
-          <Icon type="question-circle-o" />
+          {element.icon && <Icon type={element.icon} />}
         </Tooltip>
       </span>
     ) : (
