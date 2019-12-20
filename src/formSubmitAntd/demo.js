@@ -3,6 +3,7 @@ import "antd/dist/antd.css"
 import _ from 'lodash'
 import {Button, DatePicker, Form, Input, InputNumber, Select} from "antd"
 import FormBuilder from "./formSubmitAntd"
+import SingleUpload from "./singleUpload"
 
 const Option = Select.Option
 
@@ -20,12 +21,21 @@ const formMeta = {
   columns: 1,
   elements: [
     {
+      key: "img",
+      label: "照片",
+      initialValue: null,
+      widget: SingleUpload,
+      tooltip: "图片大小不能超过2M",
+      icon: 'file-jpg',
+      required: true
+    },
+    {
       key: "userName",
       label: "User name",
       tooltip: "user name",
       initialValue: "Nate",
-      widget: Input,
       icon: 'file-jpg',
+      widget: Input,
       required: true
     },
     // formatter + parser用InputNumber有带上 % 情况
@@ -266,6 +276,8 @@ const App = (props) => {
           }}>重置</Button>
         </div>
       </Form>
+      
+      <hr/>
     
     </div>
   )
